@@ -13,7 +13,7 @@ class CCreature
 {
 protected:
 	int nPower; //代表攻击力
-	int nLifeValue; //代表生命值
+	int nLifeValue; //代表生命值 
 public:
 	void display()
 	{
@@ -32,8 +32,8 @@ public:
 	void Attack(CCreature * pobj)               //基类指针可以指向派生类对象,pobj为基类指针
 	{
 		//．．．表现攻击动作的代码
-		pobj->Hurted(nPower);
-		pobj->FightBack(this);
+		pobj->Hurted(nPower);                    //狼的hurted函数
+		pobj->FightBack(this);                   //狼的fightback函数
 	}
 	// void Hurted( int nPower);
 	void FightBack(CCreature * pobj)                 
@@ -79,3 +79,4 @@ int main()
 	oGhost.display();
 	return 0;
 }
+  
