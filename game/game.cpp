@@ -29,21 +29,21 @@ public:
 		//．．．．表现受伤动作的代码
 		nLifeValue -= nPower;
 	}
-	void Attack(CCreature * pobj)               //基类指针可以指向派生类对象
+	void Attack(CCreature * pobj)               //基类指针可以指向派生类对象,pobj为基类指针
 	{
 		//．．．表现攻击动作的代码
 		pobj->Hurted(nPower);
 		pobj->FightBack(this);
 	}
 	// void Hurted( int nPower);
-	void FightBack(CCreature * pobj)
+	void FightBack(CCreature * pobj)                 
 	{
 		//．．．．表现反击动作的代码
 		pobj->Hurted(nPower / 2);
 	}
 
 };
-class CDragon :public CCreature
+class CDragon :public CCreature                  //派生类对象
 {
 public:
 	//龙特有的属性和方法
