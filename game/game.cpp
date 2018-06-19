@@ -6,7 +6,7 @@
 #include <string>
 #include <iostream>
 using namespace std;
-class CWolf;
+class CWolf;//前项声明
 class CGhost;
 class CCreature;
 class CCreature
@@ -29,7 +29,7 @@ public:
 		//．．．．表现受伤动作的代码
 		nLifeValue -= nPower;
 	}
-	void Attack(CCreature * pobj)
+	void Attack(CCreature * pobj)               //基类指针可以指向派生类对象
 	{
 		//．．．表现攻击动作的代码
 		pobj->Hurted(nPower);
