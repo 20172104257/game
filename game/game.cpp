@@ -1,4 +1,4 @@
-// game.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌĞòµÄÈë¿Úµã¡£
+// game.cpp : å®šä¹‰æ§åˆ¶å°åº”ç”¨ç¨‹åºçš„å…¥å£ç‚¹ã€‚
 //
 
 
@@ -12,8 +12,8 @@ class CDragon;
 class CCreature
 {
 protected:
-	int nPower; //´ú±í¹¥»÷Á¦
-	int nLifeValue; //´ú±íÉúÃüÖµ
+	int nPower; //ä»£è¡¨æ”»å‡»åŠ›
+	int nLifeValue; //ä»£è¡¨ç”Ÿå‘½å€¼
 	string name;
 public:
 	void display()
@@ -28,48 +28,48 @@ public:
 	}
 	void Hurted(int nPower)
 	{
-		//£®£®£®£®±íÏÖÊÜÉË¶¯×÷µÄ´úÂë
-		cout << name << "ÊÜÉËº¦" << endl;
+		//ï¼ï¼ï¼ï¼è¡¨ç°å—ä¼¤åŠ¨ä½œçš„ä»£ç 
+		cout << name << "å—ä¼¤å®³" << endl;
 		nLifeValue -= nPower;
 	}
 	void Attack(CCreature * pobj)
 	{
-		//£®£®£®±íÏÖ¹¥»÷¶¯×÷µÄ´úÂë
-		cout << name << "¹¥»÷" << endl;
+		//ï¼ï¼ï¼è¡¨ç°æ”»å‡»åŠ¨ä½œçš„ä»£ç 
+		cout << name << "æ”»å‡»" << endl;
 		pobj->Hurted(nPower);
 		pobj->FightBack(this);
 	}
 	// void Hurted( int nPower);
 	void FightBack(CCreature * pobj)
 	{
-		//£®£®£®£®±íÏÖ·´»÷¶¯×÷µÄ´úÂë
-		cout << name << "·´»÷" << endl;
+		//ï¼ï¼ï¼ï¼è¡¨ç°åå‡»åŠ¨ä½œçš„ä»£ç 
+		cout << name << "åå‡»" << endl;
 		pobj->Hurted(nPower / 2);
 	}
 };
 class CDragon :public CCreature
 {
 public:
-	//ÁúÌØÓĞµÄÊôĞÔºÍ·½·¨
+	//é¾™ç‰¹æœ‰çš„å±æ€§å’Œæ–¹æ³•
 };
 class CWolf :public CCreature
 {
 public:
-	//ÀÇÌØÓĞµÄÊôĞÔºÍ·½·¨
+	//ç‹¼ç‰¹æœ‰çš„å±æ€§å’Œæ–¹æ³•
 };
 class CGhost :public CCreature
 {
 public:
-	//ÓÄÁéÌØÓĞµÄÊôĞÔºÍ·½·¨ 
+	//å¹½çµç‰¹æœ‰çš„å±æ€§å’Œæ–¹æ³• 
 };
 int main()
 {
 	CDragon oDragon;
-	oDragon.setvalue("Áú", 20, 100);
+	oDragon.setvalue("é¾™", 20, 100);
 	CWolf oWolf;
-	oWolf.setvalue("ÀÇ", 4, 100);
+	oWolf.setvalue("ç‹¼", 4, 100);
 	CGhost oGhost;
-	oGhost.setvalue("ÓÄÁé", 10, 100);
+	oGhost.setvalue("å¹½çµ", 10, 100);
 	oDragon.display();
 	oWolf.display();
 	oGhost.display();
@@ -82,5 +82,4 @@ int main()
 	return 0;
 }
 
-}
   
